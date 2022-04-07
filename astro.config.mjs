@@ -1,5 +1,3 @@
-import react from "@astrojs/react";
-
 // Full Astro Configuration API Documentation:
 // https://docs.astro.build/reference/configuration-reference
 
@@ -29,5 +27,4 @@ export default /** @type {import('astro').AstroUserConfig} */ ({
       external: ["svgo"],
     },
   },
-  integrations: [react()],
 });
