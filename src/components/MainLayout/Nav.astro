@@ -9,7 +9,7 @@ export const routes = [
   { display: "Projects", iconName: "ion:construct-sharp", pathname: "/projects" },
 ];
 ---
-<div id="nav" class={`hidden md:block sticky top-[-1px] p-3 backdrop-blur-md bg-[rgba(26,26,47,0.7)] text-brand-light-blue shadow-sm shadow-brand-dark-red-analogous z-40`}>
+<div id="nav" class={`hidden md:block sticky top-[-1px] p-4 backdrop-blur-md bg-[rgba(26,26,47,0.7)] text-brand-light-blue shadow-sm shadow-brand-dark-red-analogous z-40`}>
     <div class="flex container items-center justify-between">
         <Logo />
         <nav class="mx-auto sm:mx-0">
@@ -18,7 +18,7 @@ export const routes = [
                     <li>
                         <a  
                             aria-current={Astro.request.url.pathname === pathname ? 'page':'false' }
-                            class={`${Astro.request.url.pathname === pathname ? 'text-brand-dark-green' :''} font-medium leading-none py-1 px-2 rounded hover:bg-brand-dark-green-analogous transition-colors`} 
+                            class={`${Astro.request.url.pathname === pathname ? 'bg-brand-dark-green-analogous' :''} font-medium leading-none py-1 px-2 rounded hover:text-brand-dark-green transition-colors`} 
                             href={pathname}
                         >
                             {display}

@@ -3,16 +3,16 @@ import { routes } from './Nav.astro'
 
 import { Icon } from 'astro-icon'
 ---
-<div id="nav" class={`fixed bottom-0 md:hidden w-full p-3 backdrop-blur-md bg-[rgba(26,26,47,0.7)] text-brand-light-blue shadow-sm shadow-brand-dark-red-analogous z-40`}>
+<div id="mobile-nav" class={`fixed bottom-0 md:hidden w-full py-1 backdrop-blur-md bg-[rgba(26,26,47,0.7)] text-brand-light-blue shadow-sm shadow-brand-dark-red-analogous z-40`}>
     <div class="container flex items-center justify-center">
             <!-- <Logo /> -->
         <nav class="w-full px-2">
-            <ul class="flex jusify-around">
+            <ul class="flex space-x-4 jusify-around">
                 {routes.map(({display, iconName, pathname})=>
-                    <li class="w-full py-1 px-2 rounded hover:bg-brand-dark-green-analogous transition-colors">
+                    <li class={`${Astro.request.url.pathname === pathname ? 'bg-brand-dark-green-analogous' :''} w-full p-1 rounded hover:text-brand-dark-green transition-colors`}>
                         <a  
                             aria-current={Astro.request.url.pathname === pathname ? 'page':'false' }
-                            class={`${Astro.request.url.pathname === pathname ? 'text-brand-dark-green' :''} flex flex-col items-center justify-around font-medium`} 
+                            class="flex flex-col items-center justify-around font-medium" 
                             href={pathname}
                         >
                             <Icon class="w-5" name={iconName} />
