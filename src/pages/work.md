@@ -44,17 +44,17 @@ These Tech are my staples. I use them on my projects daily. I tend to reach out 
 
 - #### ReactJS/NextJS
 
-  - NextJS is my goto `React` framework right now. It offers many features for improving the DX and performance of the project. Image optimization, has all type s of rendering, Typescript, File-based routing, i18n, and many more out-of-the-box.
+  - NextJS is my goto `React` framework right now. It offers many features for improving the DX and performance of the project. Image optimization, has all types of rendering, Typescript, File-based routing, i18n, and much more out-of-the-box.
   - I haven't had the time to check out Remix. So for now I'm keeping my eye out for it.
 
 - #### Tailwind CSS/Material UI
 
   - I use `Tailwind CSS` for projects that already has a design in place. Prioritizing customizability, and flexibility.
-  - I reach out for `Material UI` when I'm the only one working with the design and development of the product, or projects that needs to design things on the fly.
+  - I reach out for `Material UI` when I'm the only one working with the design and development of the product, or projects that needs design on-the-fly.
 
-- #### NodeJS + PostgreSQL + Prisma
+- #### NestJS + PostgreSQL + Prisma
 
-  - This backend stack allows me to create type-safe APIs and easily business modeling with very low boilerplate.
+  - This backend stack allows me to create type-safe APIs and do system design with very low boilerplate.
   - I'd also use NestJS for projects where `Domain Modeling` is a warranted system design.
 
 - #### More stuff I use
