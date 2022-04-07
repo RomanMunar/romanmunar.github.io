@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global Metadata --><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval';">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="msapplication-TileColor" content="#05DE6F">
+<meta name="theme-color" content="#05DE6F">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="sitemap" href="/sitemap.xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#05DE6F">
+
+<!-- Primary Meta Tags -->
+<title>CSS Animations. Everything you need to know | Roman Munar</title>
+<meta name="title" content="CSS Animations. Everything you need to know | Roman Munar">
+<link rel="canonical" href="https://romanmunar.github.io/writings/my-web-dev-journey/">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://romanmunar.github.io/writings/my-web-dev-journey/">
+<meta property="og:title" content="CSS Animations. Everything you need to know | Roman Munar">
+<meta name="description" property="og:description" content="Code along as I discuss how to animate elements using css with live examples">
+<meta property="og:image" content="/images/dist/banner.webp">
+<meta property="og:image:alt" content="Roman Munar's website logo ">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:site" content="roman_munar">
+<meta property="twitter:title" content="CSS Animations. Everything you need to know | Roman Munar">
+<meta property="twitter:description" content="Code along as I discuss how to animate elements using css with live examples">
+<meta property="twitter:image" content="/images/dist/banner.webp">
+<meta name="twitter:image:alt" content="Roman Munar's website logo ">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QKJH1TSZ20"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag() {
+		dataLayer.push(arguments);
+	}
+	gtag('js', new Date());
+	gtag('config', 'G-QKJH1TSZ20');
+</script>
+
+<link rel="stylesheet" href="/assets/asset.760997a0.css"></link><script type="module" src="/entry.466e36344.js" astro-script="/writings/my-web-dev-journey/script-0"></script>
+</head>
+<body class="bg-brand-purple text-brand-light-blue font-body">
+    <div class="relative container z-50">
+        <a href="#skip" class="absolute z-10 px-4 py-2  transition-transform duration-200 transform -translate-y-12 -translate-x-full focus:top-4 focus:translate-y-3 -top-8 bg-brand-dark-purple text-brand-light-blue font-medium font-mono">
+            Skip to content
+        </a>
+    </div>
+    <div style="min-height: clamp(300px, 100vh, 500px)">
+        <div id="nav" class="hidden md:block sticky top-[-1px] p-3 backdrop-blur-md bg-[rgba(26,26,47,0.7)] text-brand-light-blue shadow-sm shadow-brand-dark-red-analogous z-40 astro-OL7U4KRT">
+    <div class="flex container items-center justify-between astro-OL7U4KRT">
+        <a class="inline-flex items-center justify-center space-x-1 text-4xlastro-OL7U4KRT" href="/">
+    <span class="whitespace-nowrap font-display font-bold"><span class="text-brand-dark-red">R</span><span class="text-brand-dark-green">M</span></span>
+</a>
+
+        <nav class="mx-auto sm:mx-0 astro-OL7U4KRT">
+            <ul class="flex space-x-4 astro-OL7U4KRT">
+                <li class="astro-OL7U4KRT">
+                        <a aria-current="false" class=" font-medium leading-none py-1 px-2 rounded hover:bg-brand-dark-green-analogous transition-colors astro-OL7U4KRT" href="/">
+                            Home
+                        </a>
+                    </li><li class="astro-OL7U4KRT">
+                        <a aria-current="false" class=" font-medium leading-none py-1 px-2 rounded hover:bg-brand-dark-green-analogous transition-colors astro-OL7U4KRT" href="/writings">
+                            Writings
+                        </a>
+                    </li><li class="astro-OL7U4KRT">
+                        <a aria-current="false" class=" font-medium leading-none py-1 px-2 rounded hover:bg-brand-dark-green-analogous transition-colors astro-OL7U4KRT" href="/notes">
+                            Notes
+                        </a>
+                    </li><li class="astro-OL7U4KRT">
+                        <a aria-current="false" class=" font-medium leading-none py-1 px-2 rounded hover:bg-brand-dark-green-analogous transition-colors astro-OL7U4KRT" href="/work">
+                            Work
+                        </a>
+                    </li><li class="astro-OL7U4KRT">
+                        <a aria-current="false" class=" font-medium leading-none py-1 px-2 rounded hover:bg-brand-dark-green-analogous transition-colors astro-OL7U4KRT" href="/projects">
+                            Projects
+                        </a>
+                    </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+        <div id="nav" class="fixed bottom-0 md:hidden w-full p-3 backdrop-blur-md bg-[rgba(26,26,47,0.7)] text-brand-light-blue shadow-sm shadow-brand-dark-red-analogous z-40">
+    <div class="container flex items-center justify-center">
+            <!-- <Logo /> -->
+        <nav class="w-full px-2">
+            <ul class="flex jusify-around">
+                <li class="w-full py-1 px-2 rounded hover:bg-brand-dark-green-analogous transition-colors">
+                        <a aria-current="false" class=" flex flex-col items-center justify-around font-medium" href="/">
+                            <svg viewBox="0 0 512 512" class="w-5" astro-icon="ion:home-sharp"><path fill="currentColor" d="M416 174.74V48h-80v58.45L256 32 0 272h64v208h144V320h96v160h144V272h64l-96-97.26z"/></svg>
+
+                            <span class="text-xs flex-1">Home</span>
+                        </a>
+                    </li><li class="w-full py-1 px-2 rounded hover:bg-brand-dark-green-analogous transition-colors">
+                        <a aria-current="false" class=" flex flex-col items-center justify-around font-medium" href="/writings">
+                            <svg viewBox="0 0 512 512" class="w-5" astro-icon="ion:newspaper-sharp"><rect width="96" height="96" x="96" y="112" fill="none" rx="16" ry="16"/><path fill="currentColor" d="M468 112h-52v304a32 32 0 0 0 32 32 32 32 0 0 0 32-32V124a12 12 0 0 0-12-12z"/><path fill="currentColor" d="M431.15 477.75A64.11 64.11 0 0 1 384 416V44a12 12 0 0 0-12-12H44a12 12 0 0 0-12 12v380a56 56 0 0 0 56 56h342.85a1.14 1.14 0 0 0 .3-2.25zM96 208v-96h96v96zm224 192H96v-32h224zm0-64H96v-32h224zm0-64H96v-32h224zm0-64h-96v-32h96zm0-64h-96v-32h96z"/></svg>
+
+                            <span class="text-xs flex-1">Writings</span>
+                        </a>
+                    </li><li class="w-full py-1 px-2 rounded hover:bg-brand-dark-green-analogous transition-colors">
+                        <a aria-current="false" class=" flex flex-col items-center justify-around font-medium" href="/notes">
+                            <svg viewBox="0 0 512 512" class="w-5" astro-icon="ion:document-attach"><path fill="currentColor" d="M460 240H320a48 48 0 0 1-48-48V52a4 4 0 0 0-4-4h-53.25a65.42 65.42 0 0 0-6.5-9.81C196.72 23.88 179.59 16 160 16c-37.68 0-64 29.61-64 72v144c0 25 20.34 40 40 40a39.57 39.57 0 0 0 40-40V80a16 16 0 0 0-32 0v152a7.75 7.75 0 0 1-8 8c-2.23 0-8-1.44-8-8V88c0-19.34 8.41-40 32-40 29.69 0 32 30.15 32 39.38v138.75c0 17.45-5.47 33.23-15.41 44.46C166.5 282 152.47 288 136 288s-30.5-6-40.59-17.41C85.47 259.36 80 243.58 80 226.13V144a16 16 0 0 0-32 0v82.13c0 51.51 33.19 89.63 80 93.53V432a64 64 0 0 0 64 64h208a64 64 0 0 0 64-64V244a4 4 0 0 0-4-4z"/><path fill="currentColor" d="M320 208h129.81a2 2 0 0 0 1.41-3.41L307.41 60.78a2 2 0 0 0-3.41 1.41V192a16 16 0 0 0 16 16z"/></svg>
+
+                            <span class="text-xs flex-1">Notes</span>
+                        </a>
+                    </li><li class="w-full py-1 px-2 rounded hover:bg-brand-dark-green-analogous transition-colors">
+                        <a aria-current="false" class=" flex flex-col items-center justify-around font-medium" href="/work">
+                            <svg viewBox="0 0 512 512" class="w-5" astro-icon="ion:briefcase-sharp"><path fill="currentColor" d="M336 288H176v-32H16v196a12 12 0 0 0 12 12h456a12 12 0 0 0 12-12V256H336zM496 124a12 12 0 0 0-12-12H384V56a8 8 0 0 0-8-8H136a8 8 0 0 0-8 8v56H28a12 12 0 0 0-12 12v100h480zm-152-12H168V88h176z"/></svg>
+
+                            <span class="text-xs flex-1">Work</span>
+                        </a>
+                    </li><li class="w-full py-1 px-2 rounded hover:bg-brand-dark-green-analogous transition-colors">
+                        <a aria-current="false" class=" flex flex-col items-center justify-around font-medium" href="/projects">
+                            <svg viewBox="0 0 512 512" class="w-5" astro-icon="ion:construct-sharp"><path fill="currentColor" d="m497.14 111.38-81.09 80.84-48.58-48.41L448.56 63c-45.22-22-108.65-22.09-146.2 15.35-35.32 35.2-39.73 90.61-22.54 134.2L99.57 391.37a12 12 0 0 0 0 17l52.27 52.11a12 12 0 0 0 17 0l180-180.5c43.16 16.21 98 11.64 132.74-23 37.5-37.45 37.42-100.34 15.56-145.6z"/><path fill="currentColor" d="m365.45 308.62-71.83 72 75.53 79.92a10.88 10.88 0 0 0 15.65.21l60-60.46a11 11 0 0 0-.24-15.69zM119 212c0-4.87-4-9.33-7.45-12.78l-.25-.24-1.54-1.47a1.06 1.06 0 0 1-.26-.8 16.16 16.16 0 0 1 9.52-2c1.27.13 5.91.9 12.4 4.91 3.38 2.09 32.63 30.23 43.93 40.7a11 11 0 0 0 .14 15.35l7.43 7.86 65.66-65.17-8.25-7.84a10.87 10.87 0 0 0-15.31-.06c-23-24.68-29-35.45-31-42.45-4.42-15.47 4.14-28 14-36 5.84-4.62 17.88-8.08 29-9a52.72 52.72 0 0 1 11.61.6c3.47.5 6.3 1.14 7.39 1.4a68.51 68.51 0 0 1 11 4l12-19a88.38 88.38 0 0 0-13.4-17.7 115.05 115.05 0 0 0-5.19-5.1c-7.78-7.15-28-19.2-54.59-19.2a117.38 117.38 0 0 0-44.77 8.82c-37.44 15.34-61.88 36.25-73.11 47.35l-.07.07A219.55 219.55 0 0 0 67 128.56c-5.35 7.53-4.77 15.84-4.38 21.34 0 .32 0 .67.07 1a18.41 18.41 0 0 0-10.78-3.5A18 18 0 0 0 39 152.73L2 189.62a6.79 6.79 0 0 0 0 9.6L65 262a6.72 6.72 0 0 0 9.5 0l37.06-37c3.44-3.44 7.44-8.14 7.44-13z"/></svg>
+
+                            <span class="text-xs flex-1">Projects</span>
+                        </a>
+                    </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+        <main id="skip">
+            <article>
+        <header class="bg-brand-dark-purple shadow px-4">
+    <div class="container pt-10 md:pt-20 pb-12">
+        <nav aria-label="breadcrumbs" class="astro-7UOKE4JM">
+    <ul class="flex text-brand-light-blue astro-7UOKE4JM">
+        <li class="astro-7UOKE4JM">
+                <a class="text-brand-link-blue astro-7UOKE4JM" href="/">Home</a>
+            </li><li class="astro-7UOKE4JM">
+                <a class="text-brand-link-blue astro-7UOKE4JM" href="/writings">Writings</a>
+            </li>
+    </ul>
+</nav>
+
+
+        <h1 class="text-4xl md:text-5xl font-display text-white">
+            CSS Animations. Everything you need to know
+        </h1>
+        
+        <div class="grid grid-cols-1 pt-5">
+            <p>
+                    <svg viewBox="0 0 20 20" class="opacity-70 inline h-5 w-5" astro-icon="heroicons-solid:clock"><path fill="currentColor" fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-12a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l2.828 2.829a1 1 0 1 0 1.415-1.415L11 9.586V6z" clip-rule="evenodd"/></svg>
+
+                        Last updated on <time datetime="2022-01-01">January 01, 2022</time>
+                </p>
+            <p>
+                    <svg viewBox="0 0 20 20" class="opacity-70 inline h-5 w-5" astro-icon="heroicons-solid:bookmark"><path fill="currentColor" d="M5 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v14l-5-2.5L5 18V4z"/></svg>
+
+                    5 min read
+                </p>
+            <p class="pt-4">
+                    CSS, Dev
+                </p>
+        </div>
+    </div>
+</header>
+        <div class="max-w-[65ch] lg:max-w-container mx-auto pt-20 px-4 gap-4 flex flex-col lg:flex-row-reverse justify-center pb-12">
+            <aside>
+                <div class="sticky top-20 overflow-y-auto text-white">
+                        <nav id="toc" style="--toc-header-offset: 1.25em" aria-label="Table of contents" class="astro-M466YX2V">
+    <p style="padding-left: calc(2 * var(--toc-header-offset))" class="py-0.5 text-lg font-semibold border-l-2 border-transparent astro-M466YX2V">On this page</p>
+    <ul class="astro-M466YX2V">
+        <li class="astro-M466YX2V">
+                <a href="#introduction" data-heading-id="introduction" style="padding-left: calc(2 * var(--toc-header-offset))" class="block py-0.5 text-brand-light-blue border-l-2 border-l-brand-dark-green-analogous depth-2 astro-M466YX2V">
+                    Introduction
+                </a>
+            </li><li class="astro-M466YX2V">
+                <a href="#common-mispractice-on-animations-in-css" data-heading-id="common-mispractice-on-animations-in-css" style="padding-left: calc(3 * var(--toc-header-offset))" class="block py-0.5 text-brand-light-blue border-l-2 border-l-brand-dark-green-analogous depth-3 astro-M466YX2V">
+                    Common mispractice on animations in css
+                </a>
+            </li><li class="astro-M466YX2V">
+                <a href="#lets-start" data-heading-id="lets-start" style="padding-left: calc(3 * var(--toc-header-offset))" class="block py-0.5 text-brand-light-blue border-l-2 border-l-brand-dark-green-analogous depth-3 astro-M466YX2V">
+                    Let&#39;s start
+                </a>
+            </li><li class="astro-M466YX2V">
+                <a href="#transition" data-heading-id="transition" style="padding-left: calc(3 * var(--toc-header-offset))" class="block py-0.5 text-brand-light-blue border-l-2 border-l-brand-dark-green-analogous depth-3 astro-M466YX2V">
+                    Transition
+                </a>
+            </li><li class="astro-M466YX2V">
+                <a href="#transform" data-heading-id="transform" style="padding-left: calc(3 * var(--toc-header-offset))" class="block py-0.5 text-brand-light-blue border-l-2 border-l-brand-dark-green-analogous depth-3 astro-M466YX2V">
+                    Transform
+                </a>
+            </li><li class="astro-M466YX2V">
+                <a href="#rotate" data-heading-id="rotate" style="padding-left: calc(4 * var(--toc-header-offset))" class="block py-0.5 text-brand-light-blue border-l-2 border-l-brand-dark-green-analogous depth-4 astro-M466YX2V">
+                    Rotate
+                </a>
+            </li><li class="astro-M466YX2V">
+                <a href="#translate" data-heading-id="translate" style="padding-left: calc(4 * var(--toc-header-offset))" class="block py-0.5 text-brand-light-blue border-l-2 border-l-brand-dark-green-analogous depth-4 astro-M466YX2V">
+                    Translate
+                </a>
+            </li><li class="astro-M466YX2V">
+                <a href="#scale" data-heading-id="scale" style="padding-left: calc(4 * var(--toc-header-offset))" class="block py-0.5 text-brand-light-blue border-l-2 border-l-brand-dark-green-analogous depth-4 astro-M466YX2V">
+                    Scale
+                </a>
+            </li><li class="astro-M466YX2V">
+                <a href="#skew" data-heading-id="skew" style="padding-left: calc(4 * var(--toc-header-offset))" class="block py-0.5 text-brand-light-blue border-l-2 border-l-brand-dark-green-analogous depth-4 astro-M466YX2V">
+                    Skew
+                </a>
+            </li><li class="astro-M466YX2V">
+                <a href="#a-sample-modal-combining-it-all" data-heading-id="a-sample-modal-combining-it-all" style="padding-left: calc(3 * var(--toc-header-offset))" class="block py-0.5 text-brand-light-blue border-l-2 border-l-brand-dark-green-analogous depth-3 astro-M466YX2V">
+                    A Sample Modal, combining it all.
+                </a>
+            </li>
+    </ul>
+</nav>
+
+
+
+
+
+                        <a target="_blank" rel="noopener noreferrer" class="text-brand-link-blue" href="https://github.com/romanmunar/romanmunar.github.io/blob/main/src/pages/writings/my-web-dev-journey.md">
+    <span class="flex pl-12 pt-4 gap-4">
+                                <svg viewBox="0 0 24 24" class="text-brand-light-blue w-5 h-5" astro-icon="mdi:github"><path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+
+                                Edit on github
+                            </span>
+</a>
+                </div>
+            </aside>
+            <section class="w-full relative z-0">
+                <h2 class="opacity-0 absolute top-0 left-0" id="introduction">Introduction</h2>
+                <div class="first-letter:text-brand-dark-green first-letter:text-5xl prose-invert prose prose-headings:font-display sm:prose-sm lg:prose-lg">
+                    <p>We will be tackling different ways to animate an element using css, as well as the different properties that we can use, and properties we should avoid using for performance reasons.</p><h3 id="common-mispractice-on-animations-in-css"><a class="anchor" href="#common-mispractice-on-animations-in-css"><span class="icon icon-link"></span></a>Common mispractice on animations in css</h3><p>What I've seen in a lot of youtube css tutorials, is that they are animating height,width, margin, padding, etc. All of these properties triggers a repaint and layout rendering of the entire DOM, these will cause lags that will be prominent as your web site add more components, and will result to a bad users experience, especially if they're on a mobile device. you may see whether a transition property triggers a repaint here, <a href="https://csstriggers.com">https://csstriggers.com</a>.</p><p>| Repaint causing properties | Instead Use                 |
+| -------------------------- | --------------------------- |
+| height                     | <code>transform: scaleY()</code>       |
+| width                      | <code>transform: scaleX()</code>       |
+| margin                     | <code>transform: translate(X,Y)</code> |
+| padding                    | <code>transform: scale(X,Y)</code>     |
+| top/bottom | left/right   | <code>transform: translate(X,Y)</code> |</p><h3 id="lets-start"><a class="anchor" href="#lets-start"><span class="icon icon-link"></span></a>Let's start</h3><p>First off, our goal here is to create a minimum working example, that you can extend for your use-case.</p><p>We will be animating our elements on hover, It will emphasize our animation properties that we'll be using.</p><p>I've seperated transform properties from the commonly used ones like colors, shadows, and opacity</p><h3 id="transition"><a class="anchor" href="#transition"><span class="icon icon-link"></span></a>Transition</h3><p>the <code>transition</code> property is all you'll need for animating elements, this takes in 4 parameters, <code>t-property t-duration t-timing-function t-delay</code>, but only <code>t-property</code> and <code>t-duration</code> is required, other params have a default value ease-in for <code>t-timing-function</code> and 0 for <code>t-delay</code>.</p><ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transition-property">Transition-property</a></li>
+</ul><p>There a lot of transition properties that you may animate, but beware as most of them triggers a DOM repaint and layout rendering, as discussed <a href="#common-mispractice-on-animations-in-css">above</a>.</p><p>To name a few good ones, this will commonly be, transform, color and shadow.
+All of which has value may it be degrees, (px/rem)s, hexcode, etc.</p><ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transition-duration">Transition-duration</a></li>
+</ul><p>Transitions uses time to calculate the start and end values of the animation property you're animating, this takes in a number in seconds(s) and milliseconds(ms).</p><ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function">Transition-timing-function</a></li>
+</ul><p>Remember that transitions determine the start and end values using time, transition-timing-function are curves that are used determine to how fast/slow those values would be in a set amount of time.</p><p>This defaults to ease-in, so we'll take it as an example, The values start out slow, and ramps up as time increases.</p><ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transition-delay">Transition-delay</a>.</li>
+</ul><p>This is very rarely used but, this is useful when you have a staggering animation which <em>relies on other elements before it animates</em>.</p><p>We'll begin with our starting code here, We'll be animating our elements on hover.</p><p>Create an <code>index.html</code> file and paste the starting code below,</p><div class="remark-code-title">index.html</div><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">&lt;</span><span style="color: #7EE787">style</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #79C0FF">.color:hover</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">color</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">#50c717</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">  }</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #79C0FF">.color</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">background</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">#3a8cb8</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">color</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">#fff</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">transition</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">color</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">0.5</span><span style="color: #FF7B72">s</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">cubic-bezier</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">0.4</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0.2</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">  }</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #79C0FF">.shadow:hover</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">box-shadow</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">0</span><span style="color: #FF7B72">px</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">2</span><span style="color: #FF7B72">px</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">5</span><span style="color: #FF7B72">px</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">#000</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">  }</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #79C0FF">.shadow</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">background</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">#ec3d08</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">transition</span><span style="color: #C9D1D9">: box-shadow </span><span style="color: #79C0FF">0.5</span><span style="color: #FF7B72">s</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">cubic-bezier</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">0.4</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0.2</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #79C0FF">.opacity:hover</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">opacity</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">0.5</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">  }</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #79C0FF">.opacity</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">background</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">#1d1c2f</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">transition</span><span style="color: #C9D1D9">: opacity </span><span style="color: #79C0FF">0.5</span><span style="color: #FF7B72">s</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">cubic-bezier</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">0.4</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0.2</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">  }</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #7EE787">div</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">width</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">100</span><span style="color: #FF7B72">px</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">height</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">100</span><span style="color: #FF7B72">px</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">padding</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">10</span><span style="color: #FF7B72">px</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">  }</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #7EE787">body</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">display</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">flex</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">flex-direction</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">row</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">gap</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">1</span><span style="color: #FF7B72">em</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">  }</span></span>
+<span class="line"><span style="color: #C9D1D9">&lt;/</span><span style="color: #7EE787">style</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">&lt;</span><span style="color: #7EE787">body</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">  &lt;</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">class</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;color&quot;</span><span style="color: #C9D1D9">&gt;Color Animation&lt;/</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">  &lt;</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">class</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;shadow&quot;</span><span style="color: #C9D1D9">&gt;&lt;/</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">  &lt;</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">class</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;opacity&quot;</span><span style="color: #C9D1D9">&gt;&lt;/</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">&lt;/</span><span style="color: #7EE787">body</span><span style="color: #C9D1D9">&gt;</span></span></code></pre><p>If applied, you'll see a similar animation like the one below,</p><p>See a recurring pattern here? <code>transition: property duration curve</code>
+If I want to animate the background color, It would look like <code>transition: background-color 500ms ease-in</code> and say we want to animate our background from white and to black on hover, It would look like</p><div class="remark-code-title">index.html</div><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">.whiteToBlack:hover {</span></span>
+<span class="line"><span style="color: #C9D1D9">	background-color: #000;</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span>
+<span class="line"><span style="color: #C9D1D9">.whiteToBlack {</span></span>
+<span class="line"><span style="color: #C9D1D9">	background-color: #fff;</span></span>
+<span class="line"><span style="color: #C9D1D9">	transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span>
+<span class="line"><span style="color: #C9D1D9">&lt;</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">class</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;whiteToBlack&quot;</span><span style="color: #C9D1D9">&gt;&lt;/</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9">&gt;</span></span></code></pre><h3 id="transform"><a class="anchor" href="#transform"><span class="icon icon-link"></span></a>Transform</h3><p>Transform will make up around 70% of your animations. Which is why I think it deserves its own section. <code>transform</code> should be your go-to when thinking about moving animations, as it will cover most of the animations you'll need.</p><p>We'll have a similar structure to the one above.</p><p>Create another <code>index.html</code> file and paste the starting code below,</p><div class="remark-code-title">index.html</div><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">&lt;</span><span style="color: #7EE787">style</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #79C0FF">.rotate:hover</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">  }</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #79C0FF">.rotate</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">background</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">#3a8cb8</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #79C0FF">.translate:hover</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">  }</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #79C0FF">.translate</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">background</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">#ec3d08</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #79C0FF">.scale:hover</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">  }</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #79C0FF">.scale</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">background</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">#1d1c2f</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #7EE787">div</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">width</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">100</span><span style="color: #FF7B72">px</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">height</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">100</span><span style="color: #FF7B72">px</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">transition</span><span style="color: #C9D1D9">: transform </span><span style="color: #79C0FF">0.2</span><span style="color: #FF7B72">s</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">cubic-bezier</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">0.4</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0.2</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">  }</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #7EE787">body</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">display</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">flex</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">flex-direction</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">row</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">gap</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">1</span><span style="color: #FF7B72">em</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">  }</span></span>
+<span class="line"><span style="color: #C9D1D9">&lt;/</span><span style="color: #7EE787">style</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">&lt;</span><span style="color: #7EE787">body</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">  &lt;</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">class</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;rotate&quot;</span><span style="color: #C9D1D9">&gt;&lt;/</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">  &lt;</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">class</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;translate&quot;</span><span style="color: #C9D1D9">&gt;&lt;/</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">  &lt;</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">class</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;scale&quot;</span><span style="color: #C9D1D9">&gt;&lt;/</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">&lt;/</span><span style="color: #7EE787">body</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"></span></code></pre><ul>
+<li>
+<h4 id="rotate"><a class="anchor" href="#rotate"><span class="icon icon-link"></span></a>Rotate</h4>
+</li>
+</ul><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #79C0FF">.rotate:hover</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #79C0FF">transform</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">rotate</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">12</span><span style="color: #FF7B72">deg</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre><p>By adding the rotate(12deg) value to the transform property, you should have similar animation as the first square below.</p><p>the <code>transform: rotate([angle](deg | turn | rad))</code> will rotate the element by the
+angle passed. Options passed in can be deg for degrees ranging from 0 - 360, turn
+for a revolution ranging from 0 to 1, and a 6.28 rad equates to 360 deg.</p><ul>
+<li>
+<h4 id="translate"><a class="anchor" href="#translate"><span class="icon icon-link"></span></a>Translate</h4>
+</li>
+</ul><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #79C0FF">.translate:hover</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #79C0FF">transform</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">translate</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">1.25</span><span style="color: #FF7B72">rem</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">1.25</span><span style="color: #FF7B72">rem</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre><p>the translate property can take two parametes, which are the x and y axis, the example below took 1.25rem on x-axis and also 1.25rem on y-axis.</p><ul>
+<li>
+<h4 id="scale"><a class="anchor" href="#scale"><span class="icon icon-link"></span></a>Scale</h4>
+</li>
+</ul><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #79C0FF">.translate:hover</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #79C0FF">transform</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">translate</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">1.25</span><span style="color: #FF7B72">rem</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">1.25</span><span style="color: #FF7B72">rem</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre><ul>
+<li>
+<h4 id="skew"><a class="anchor" href="#skew"><span class="icon icon-link"></span></a>Skew</h4>
+</li>
+</ul><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #79C0FF">.skew:hover</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #79C0FF">transform</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">skew</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">1.25</span><span style="color: #FF7B72">rem</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">1.25</span><span style="color: #FF7B72">rem</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre><p>I won't be covering the skew property as it's being very rarely used.
+But it basically change the elements' perspective and similar to translate, it takes in two arguments, for x and y axis, but each takes an angle degree value.</p><p>If applied using example above, you'll see similar like the one below</p><h3 id="a-sample-modal-combining-it-all"><a class="anchor" href="#a-sample-modal-combining-it-all"><span class="icon icon-link"></span></a>A Sample Modal, combining it all.</h3><div class="remark-code-title">index.html</div><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">&lt;</span><span style="color: #7EE787">style</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #79C0FF">.overlay</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">display</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">flex</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">align-items</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">center</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">position</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">absolute</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">top</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">bottom</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">left</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">right</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">transition</span><span style="color: #C9D1D9">: background-color </span><span style="color: #79C0FF">0.5</span><span style="color: #FF7B72">s</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">ease-in-out</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">visibility</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">hidden</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">  }</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #79C0FF">.overlay.open</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">background-color</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">rgba</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0.5</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">visibility</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">visible</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">  }</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #79C0FF">.modal.open</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">transform</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">translateY</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">200</span><span style="color: #FF7B72">px</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">visibility</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">visible</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">  }</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #79C0FF">.modal</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">background</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">#fff</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">text-align</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">center</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">transition</span><span style="color: #C9D1D9">: transform </span><span style="color: #79C0FF">0.5</span><span style="color: #FF7B72">s</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">ease-out</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">visibility</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">hidden</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">  }</span></span>
+<span class="line"><span style="color: #C9D1D9">&lt;/</span><span style="color: #7EE787">style</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">&lt;</span><span style="color: #7EE787">body</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">  &lt;</span><span style="color: #7EE787">button</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">onClick</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;(()=&gt;{</span></span>
+<span class="line"><span style="color: #A5D6FF">      document.getElementsByClassName(&#39;overlay&#39;)[0].classList.add(&#39;open&#39;)</span></span>
+<span class="line"><span style="color: #A5D6FF">      document.getElementsByClassName(&#39;modal&#39;)[0].classList.add(&#39;open&#39;)</span></span>
+<span class="line"><span style="color: #A5D6FF">    })();&quot;</span></span>
+<span class="line"><span style="color: #C9D1D9">  &gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">    Toggle Modal</span></span>
+<span class="line"><span style="color: #C9D1D9">  &lt;/</span><span style="color: #7EE787">button</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">  &lt;</span><span style="color: #7EE787">div</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">class</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;overlay&quot;</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">onClick</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;((e)=&gt;{</span></span>
+<span class="line"><span style="color: #A5D6FF">      document.getElementsByClassName(&#39;overlay&#39;)[0].classList.remove(&#39;open&#39;)</span></span>
+<span class="line"><span style="color: #A5D6FF">      document.getElementsByClassName(&#39;modal&#39;)[0].classList.remove(&#39;open&#39;)</span></span>
+<span class="line"><span style="color: #A5D6FF">    })();&quot;</span></span>
+<span class="line"><span style="color: #C9D1D9">  &gt;&lt;/</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">  &lt;</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">class</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;modal&quot;</span><span style="color: #C9D1D9">&gt;I&#39;m a modal&lt;/</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">&lt;/</span><span style="color: #7EE787">body</span><span style="color: #C9D1D9">&gt;</span></span></code></pre>
+                </div>
+            </section>
+        </div>
+    </article>
+        </main>
+    </div>
+    <footer class="bg-brand-dark-purple px-4">
+    <div class="container pt-20 pb-12">
+        <div class="pt-5 pb-12 grid align-top md:justify-items-center grid-cols-2 md:grid-cols-3">
+            <div aria-label="logo" class="hidden md:block self-start">
+                <a class="inline-flex items-center justify-center space-x-1 text-4xltext-4xl" href="/">
+    <span class="whitespace-nowrap font-display font-bold"><span class="text-brand-dark-red">R</span><span class="text-brand-dark-green">M</span></span>
+</a>
+
+                <p class="inline">© 2022</p>
+            </div>
+            <nav aria-label="page links">
+                <p class="font-semibold py-2 text-brand-light-blue">Sitemap</p>
+                <ul class="text-brand-link-blue space-y-4">
+                    <li><a href="/">Home</a></li><li><a href="/writings">Writings</a></li><li><a href="/notes">Notes</a></li><li><a href="/work">Work</a></li><li><a href="/projects">Projects</a></li>
+                </ul>
+            </nav>
+            <nav aria-label="social links">
+    <p class="font-semibold py-2 text-brand-light-blue">Social links</p>
+    <ul class="text-brand-link-blue space-y-4">
+        <li>
+                <a target="_blank" rel="noopener noreferrer" class="text-brand-link-blue" href="https://github.com/RomanMunar/">
+    <div class="group flex space-x-1">
+                        <svg viewBox="0 0 24 24" class="opacity-70 group-hover:opacity-100" width="24" height="24" astro-icon="mdi:github"><path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+
+                        <span>Github</span>
+                    </div>
+</a>
+            </li><li>
+                <a target="_blank" rel="noopener noreferrer" class="text-brand-link-blue" href="https://www.linkedin.com/in/romanmunar/">
+    <div class="group flex space-x-1">
+                        <svg viewBox="0 0 24 24" class="opacity-70 group-hover:opacity-100" width="24" height="24" astro-icon="mdi:linkedin"><path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+
+                        <span>LinkedIn</span>
+                    </div>
+</a>
+            </li><li>
+                <a target="_blank" rel="noopener noreferrer" class="text-brand-link-blue" href="mailto:roman.munar1@gmail.com">
+    <div class="group flex space-x-1">
+                        <svg viewBox="0 0 24 24" class="opacity-70 group-hover:opacity-100" width="24" height="24" astro-icon="mdi:email"><path fill="currentColor" d="m20 8-8 5-8-5V6l8 5 8-5m0-2H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/></svg>
+
+                        <span>Email</span>
+                    </div>
+</a>
+            </li><li>
+                <a target="_blank" rel="noopener noreferrer" class="text-brand-link-blue" href="https://twitter.com/roman_munar/">
+    <div class="group flex space-x-1">
+                        <svg viewBox="0 0 24 24" class="opacity-70 group-hover:opacity-100" width="24" height="24" astro-icon="mdi:twitter"><path fill="currentColor" d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/></svg>
+
+                        <span>Twitter</span>
+                    </div>
+</a>
+            </li>
+    </ul>
+</nav>
+
+        </div>
+    </div>
+</footer>
+</body></html>
