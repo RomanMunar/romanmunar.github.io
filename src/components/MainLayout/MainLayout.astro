@@ -10,6 +10,7 @@ const { title, description }= Astro.props
 
 const permalink = Astro.request.canonicalURL.toString()
 const appendedBrandTitle = title?.includes('|') ? title : `${title} | Roman Munar`
+const isProd = process.env.NODE_ENV !== 'development';
 ---
 <html lang="en">
 <head>
@@ -29,5 +30,14 @@ const appendedBrandTitle = title?.includes('|') ? title : `${title} | Roman Muna
         </main>
     </div>
     <Footer />
+    {isProd && <script>
+        console.log(` █████╗     ██████╗ ███████╗██╗   ██╗    ███████╗██╗  ██╗██████╗ 
+██╔══██╗    ██╔══██╗██╔════╝██║   ██║    ██╔════╝██║  ██║╚════██╗
+███████║    ██║  ██║█████╗  ██║   ██║    █████╗  ███████║  ▄███╔╝
+██╔══██║    ██║  ██║██╔══╝  ╚██╗ ██╔╝    ██╔══╝  ██╔══██║  ▀▀══╝ 
+██║  ██║    ██████╔╝███████╗ ╚████╔╝     ███████╗██║  ██║  ██╗   
+╚═╝  ╚═╝    ╚═════╝ ╚══════╝  ╚═══╝      ╚══════╝╚═╝  ╚═╝  ╚═╝   
+`)
+    </script>}
 </body>
 </html>
