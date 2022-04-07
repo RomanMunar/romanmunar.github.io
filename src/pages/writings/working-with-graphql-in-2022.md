@@ -4,8 +4,9 @@ publishedAt:
 description: Things to consider before deciding to use GraphQL
 image: /images/dist/blog_working-with-graphql-2022.webp
 tags:
-  - "Personal"
-  - "Dev"
+  - "GraphQL"
+  - "API Schema"
+  - "API Schema"
 
 layout: "../../components/Pages/WritingsPage/WritingContentLayout.astro"
 ---

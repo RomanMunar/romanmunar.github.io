@@ -31,7 +31,7 @@ const description = 'Thoughts about software development, working on side projec
     <Header title={title} description={description} />
     <div class="container px-4 pt-20 pb-12">
         <ul class="grid md:grid-cols-2 lg:grid-cols-3 gap-4"> <!-- add to horizontally scroll: flex-nowrap max-w-full overflow-x-auto -->
-            {allPosts.map(({title, description, image, imageAlt, url, publishDate, publishedAt, readingTime, tags })=> (
+            {allPosts.map(({title, description, draft, image, imageAlt, url, publishDate, publishedAt, readingTime, tags })=> (
                 <li>
                     <a class="block h-full border border-brand-light-blue rounded overflow-hidden" href={url}>
                         <article class="flex flex-col h-full">
@@ -48,10 +48,12 @@ const description = 'Thoughts about software development, working on side projec
                                     <p class="text-lg">{description}</p>
                                 </div>
                                 <div class="pt-4">
-                                    <div class="text-sm flex-none self-end flex ml-auto md:m-0">
-                                        <time datetime={publishedAt}>{publishDate}</time> <span class="px-1">•</span>
-                                        <p>{readingTime}</p>
-                                    </div>
+                                    {!draft && (
+                                        <div class="text-sm flex-none self-end flex ml-auto md:m-0">
+                                            <time datetime={publishedAt}>{publishDate}</time> <span class="px-1">•</span>
+                                            <p>{readingTime}</p>
+                                        </div>
+                                    )}
                                     <p class="text-sm text-brand-link-blue">{tags?.join(', ')}</p>
                                 </div>
                             </div>
