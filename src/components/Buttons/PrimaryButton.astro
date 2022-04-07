@@ -1,0 +1,24 @@
+---
+export interface Props {
+    class?: string
+    type?: string
+    href?: string
+    isAnchorEl?: boolean
+    size?: 'sm' | 'md' | 'lg'
+    variant?: 'primary' | 'secondary'
+}
+const { type = 'button', isAnchorEl, href = '', variant = 'primary'} = Astro.props as Props
+const extraClass = `${Astro.props.class}`
+---
+{
+    isAnchorEl ? (
+        <a href={href} class={`${extraClass} ${variant === 'primary' ? 'text-brand-dark-green bg-brand-dark-green-analogous' : ''} inline-block text-sm px-4 py-2`}>
+            <slot/>
+        </a>
+    ) :
+    (
+        <button type={type} class={`${extraClass} ${variant === 'primary' ? 'text-brand-dark-green bg-brand-dark-green-analogous' : ''} text-sm px-4 py-2`}>
+            <slot />
+        </button>
+    )
+}

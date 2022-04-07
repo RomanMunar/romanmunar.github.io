@@ -1,0 +1,46 @@
+---
+import { Icon } from "astro-icon";
+import ExternalLink from "../ExternalLink.astro";
+
+export const socialLinks = [
+  {
+    iconName: "github",
+    company: "Github",
+    link: "https://github.com/RomanMunar/",
+    label: "My github profile",
+  },
+  {
+    iconName: "linkedin",
+    company: "LinkedIn",
+    link: "https://www.linkedin.com/in/romanmunar/",
+    label: "",
+  },
+  {
+    iconName: "email",
+    company: "Email",
+    link: "mailto:roman.munar1@gmail.com",
+    label: "My email addresss",
+  },
+  {
+    iconName: "twitter",
+    company: "Twitter",
+    link: "https://twitter.com/roman_munar/",
+    label: "My twitter profile",
+  },
+];
+---
+<nav aria-label="social links">
+    <p class="font-semibold py-2 text-brand-light-blue">Social links</p>
+    <ul class="text-brand-link-blue space-y-4">
+        {socialLinks.map(({iconName, company, link, label})=>
+            <li>
+                <ExternalLink href={link}>
+                    <div class="group flex space-x-1">
+                        <Icon class='opacity-70 group-hover:opacity-100' size={24} name={iconName} pack='mdi' />
+                        <span>{company}</span>
+                    </div>
+                </ExternalLink>
+            </li>
+        )}
+    </ul>
+</nav>

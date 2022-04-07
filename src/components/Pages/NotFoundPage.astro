@@ -1,0 +1,36 @@
+---
+import MainLayout from "../MainLayout/MainLayout.astro";
+import PrimaryButton from "../Buttons/PrimaryButton.astro";
+
+// Seems like an ssr solution
+// import { routes } from "../MainLayout/Nav.astro";
+// const showSoon = !!routes.find((r) => r.pathname === Astro.request.url.pathname)
+
+const {showSoon} = Astro.props as { showSoon?: boolean}
+---
+<MainLayout title='Page not found' description='This page does not exist'>
+    <div class="pt-20 px-4 flex items-center justify-center bg-brand-purple">
+        <div>
+            {showSoon ? (
+                <h1 class="flex items-center justify-center space-x-4 font-bold text-4xl font-display tracking-widest">
+                    <span class="block text-brand-dark-red text-shadow-1">Will be available soon 🛠.</span>
+                </h1>
+                <span><s>probably</s></span>
+                <br>
+            ) : (
+                <h1 class="flex items-center justify-center space-x-4 font-bold text-4xl sm:text-6xl md:text-6xl font-display tracking-widest">
+                    <span class="text-brand-dark-red text-shadow-1">Four</span>
+                    <span class="text-brand-dark-yellow text-shadow-2">oh'</span>
+                    <span class="text-brand-dark-green text-shadow-3">Four</span>
+                </h1>
+                <p role="alert" class="font-medium text-white py-2">This page could not be found.</p>
+            )}
+            <div class="pt-5">
+                <PrimaryButton>Take me home</PrimaryButton>
+                <PrimaryButton variant='secondary' aria-label="Go to previous page" isAnchorEl href='javascript:history.back()'>
+                    Go Back
+                </PrimaryButton>
+            </div>
+        </div>
+    </div>
+</MainLayout>

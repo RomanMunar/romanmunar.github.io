@@ -1,0 +1,43 @@
+---
+import TableOfContents from '../../TableOfContents.astro'
+import ExternalLink from '../../ExternalLink.astro'
+import MainLayout from "../../MainLayout/MainLayout.astro"
+import Header from './../../Header.astro'
+import { addPubDateAndReadingTime } from "./index.astro";
+import { FrontMatterMetadata } from '../../../types'
+
+import { Icon } from 'astro-icon'
+
+export interface Props {
+	content: FrontMatterMetadata
+}
+ 
+const { title, publishedAt, description, tags, publishDate, readingTime } = addPubDateAndReadingTime(Astro.props.content)
+const currentPage = Astro.request.url.pathname;
+const currentFile = `src/pages${currentPage.replace(/\/$/, '')}.md`;
+const githubEditUrl = `https://github.com/romanmunar/romanmunar.github.io/blob/main/${currentFile}`;
+---
+<MainLayout title={title} description={description}>
+    <article>
+        <Header withBreadCrumbs title={title} lastUpdateDate={publishDate} updatedAt={publishedAt} readingTime={readingTime} tags={tags} />
+        <div class="max-w-[65ch] lg:max-w-container mx-auto pt-20 px-4 gap-4 flex flex-col lg:flex-row-reverse justify-center pb-12">
+            <aside>
+                <div class="sticky top-20 overflow-y-auto text-white">
+                        <TableOfContents headers={Astro.props.content.astro.headers} />
+                        <ExternalLink href={githubEditUrl}>
+                            <span class="flex pl-12 pt-4 gap-4">
+                                <Icon class="text-brand-light-blue w-5 h-5" name="mdi:github"/>
+                                Edit on github
+                            </span>
+                        </ExternalLink>
+                </div>
+            </aside>
+            <section class="w-full relative z-0">
+                <h2 class="opacity-0 absolute top-0 left-0" id="introduction">Introduction</h2>
+                <div class="first-letter:text-brand-dark-green first-letter:text-5xl prose-invert prose prose-headings:font-display sm:prose-sm lg:prose-lg">
+                    <slot />
+                </div>
+            </section>
+        </div>
+    </article>
+</MainLayout>

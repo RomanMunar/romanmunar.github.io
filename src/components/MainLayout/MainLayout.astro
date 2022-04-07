@@ -1,0 +1,33 @@
+---
+import BaseHead, { Props as BaseHeadProps } from "./BaseHead.astro";
+import Nav from './Nav.astro';
+import MobileNav from './MobileNav.astro';
+import Footer from './Footer.astro';
+
+export interface Props extends Omit<BaseHeadProps, 'permalink'> { }
+
+const { title, description }= Astro.props
+
+const permalink = Astro.request.canonicalURL.toString()
+const appendedBrandTitle = title?.includes('|') ? title : `${title} | Roman Munar`
+---
+<html lang="en">
+<head>
+    <BaseHead title={appendedBrandTitle} description={description} permalink={permalink} />
+</head>
+<body class="bg-brand-purple text-brand-light-blue font-body">
+    <div class="relative container z-50">
+        <a href="#skip" class="absolute z-10 px-4 py-2  transition-transform duration-200 transform -translate-y-12 -translate-x-full focus:top-4 focus:translate-y-3 -top-8 bg-brand-dark-purple text-brand-light-blue font-medium font-mono">
+            Skip to content
+        </a>
+    </div>
+    <div style="min-height: clamp(300px, 100vh, 500px)">
+        <Nav />
+        <MobileNav />
+        <main id="skip">
+            <slot />
+        </main>
+    </div>
+    <Footer />
+</body>
+</html>

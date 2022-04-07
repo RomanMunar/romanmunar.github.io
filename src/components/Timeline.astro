@@ -1,0 +1,53 @@
+---
+import { Icon } from "astro-icon";
+import { formatDate } from '../utils'
+
+export type TimelineEvent = {
+    iconName: string
+    title: string
+    date?: string
+    description?: string
+}
+
+interface Props {
+    timeline?: TimelineEvent[]
+}
+
+const { timeline }= Astro.props as Props
+const newTimeline= timeline ?? [
+    {
+        iconName: 'code',
+        title: "Aaaand we're live 🎉 🎉 🎉",
+        description: "How is it 2022 already. It feels like we just leaped 2 years. But kidding aside I've experienced the most growth during this pandemic.",
+        date:'2022-04-03'
+    },
+    {
+        iconName: 'code',
+        title: "Aaaand we're live 🎉 🎉 🎉",
+        description: "How is it 2022 already, we'll never know"
+    }
+]
+---
+<>
+    <!-- {newTimeline.map(({iconName, title, date, description}) => (
+        <div class="relative">
+            <span class="absolute top-12 left-6 -ml-px h-3/4 w-0.5 bg-brand-dark-green-analogous" aria-hidden="true"/>
+            <div class="relative flex items-start space-x-2">
+                <div class="relative">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-full bg-brand-dark-green-analogous">
+                        <Icon class="w-5 h-5 text-brand-dark-green" name={iconName} pack='heroicons-solid' />
+                    </div>
+                </div>
+                <div class="flex flex-col flex-1 min-w-0 sm:flex-row sm:justify-between">
+                    <div class="flex flex-col items-start flex-grow sm:justify-between">
+                        <div class="not-prose w-full flex items-end">
+                            <h4 class="flex-1 pt-3 font-bold text-lg text-white font-display sm:whitespace-nowrap">{title}</h4>
+                            {date && <span class="text-lg text-brand-light-blue font-display sm:whitespace-nowrap">{formatDate(date)}</span>}
+                        </div>
+                        <p>{description}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    ))} -->
+</>

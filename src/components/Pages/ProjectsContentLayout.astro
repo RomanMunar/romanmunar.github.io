@@ -1,0 +1,28 @@
+---
+import TableOfContents from '../TableOfContents.astro'
+import MainLayout from "../MainLayout/MainLayout.astro"
+import Header from "../Header.astro"
+
+import readingTimeLib from "reading-time"
+import { formatDate } from "../../utils";
+
+const { content } = Astro.props
+const { title, description, updatedAt, astro } = content
+
+const readingTime = readingTimeLib(astro.source).text
+const lastUpdateDate = formatDate(updatedAt)
+---
+<MainLayout title={title} description={description}>
+    <article>
+        <Header title={title} lastUpdateDate={lastUpdateDate} updatedAt={updatedAt} readingTime={readingTime} />
+        <div class="max-w-[65ch] lg:max-w-container mx-auto pt-20 px-4 gap-4 flex flex-col lg:flex-row-reverse justify-center pb-12">
+            <TableOfContents headers={Astro.props.content.astro.headers} />
+            <section class="w-full relative z-0">
+                <h2 class="opacity-0 absolute top-0 left-0" id="introduction">Introduction</h2>
+                <div class="first-letter:text-brand-dark-green first-letter:text-5xl prose-invert prose prose-headings:font-display sm:prose-sm lg:prose-lg">
+                    <slot />
+                </div>  
+            </section>
+        </div>
+    </article>
+</MainLayout>
