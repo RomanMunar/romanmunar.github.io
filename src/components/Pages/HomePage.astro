@@ -25,12 +25,12 @@ const now = [
         <h1 class="font-bold text-2xl md:text-5xl text-brand-dark-red">Roman Munar</h1>
         <h2 class="pt-1">A self-taught fullstack software developer</h2>
         <p class="text-sm opacity-90 pt-4">Likes to build and tinker with new web development toolings
-            <span class="block"></span> and share the experience here on my <a class="text-brand-link-blue" href="/blog">blog</a>/<a class="text-brand-link-blue" href="/notes">notes</a>
+            <span class="block"></span> and share the experience here on my <a class="text-brand-link-blue" href="/writings">blog</a>/<a class="text-brand-link-blue" href="/notes">notes</a>
         </p>
     </header>
     <div class="px-4 max-w-3xl space-y-8 mx-auto"> <!-- grid gap-4 [grid-template-columns:1fr_0.66fr] -->
         <section>
-            <p class="font-display text-brand-dark-green font-semibold">Latest content</p>
+            <p class="font-display text-brand-dark-green font-bold">Latest content</p>
             <ul class="md:px-4 py-2 space-y-4">
                 {allPosts.map(({title, url, publishedAt, publishDate, readingTime})=> (
                     <li>
@@ -48,13 +48,13 @@ const now = [
                     </li>
                 ))}
             </ul>
-            <PrimaryButton isAnchorEl href='/blog' class='mt-4'>
+            <PrimaryButton isAnchorEl href='/writings' class='mt-4'>
                 Read all posts <Icon class='opacity-70 inline h-5 w-5' name='arrow-right' pack='cil' />
             </PrimaryButton>
         </section>
         <!-- Or We can just lay everything there -->
         <section>
-            <p class="font-display text-brand-dark-green font-semibold">Now</p>
+            <p class="font-display text-brand-dark-green font-bold">Now</p>
             <ul class="px-4 py-2 space-y-4">
                 {now.map((n)=> (
                     <li class="p-1 border-b border-brand-light-blue">
