@@ -91,7 +91,7 @@ I was a new member on the Filipino Frontend Developers(FFED) group. A facebook g
 
 I created this project with just the plain ol' `HTML & CSS`. Making the site responsive was challenging for two reasons:
 
-- Filta's original site was not responsive it just zoomed out, and squished the texts. So I have no reference for improving it. But it was so bad that I could only be improved.
-- But the main reason is my inexperience with media queries. But after reading the documentation from [MDN](https://developer.mozilla.org/) it turned out to be very intuitive and easy. So I rewrote the project with a mobile-first approach and I had a lot of fun working on it.
+- Filta's original site was not responsive it just zoomed out, and squished the texts. So I have no reference for improving it. But it was so bad It could only be improved.
+- But the main reason was my inexperience with using media queries. After reading the documentation from [MDN](https://developer.mozilla.org/) it turned out to be very intuitive and easy. So I rewrote the project with a mobile-first approach and I had a lot of fun working on it.
 
 All in all this was a fun experience and forced me to learn a lot. I also got more involved with the dev communities here in Philippines.
