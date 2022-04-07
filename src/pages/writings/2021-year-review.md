@@ -1,7 +1,7 @@
 ---
-title: "2021 hindsights"
+title: "2021 hindsights and goals for 2022"
 publishedAt:
-description: "Code along as I discuss how to animate elements using css with live examples Code along as I discuss how to animate elements using css with live examples"
+description: "Things I celebrated in 2021, and things to be improved on for 2022"
 image: /images/dist/blog_2021-hindsights-and-goals-for-2022.webp
 tags:
   - "Personal"

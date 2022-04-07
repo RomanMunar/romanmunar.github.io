@@ -4,9 +4,12 @@ import Nav from './Nav.astro';
 import MobileNav from './MobileNav.astro';
 import Footer from './Footer.astro';
 
-export interface Props extends Omit<BaseHeadProps, 'permalink'> { }
+export interface Props extends Omit<BaseHeadProps, 'permalink'> { 
+    image?: string
+    imageAlt?: string
+}
 
-const { title, description }= Astro.props
+const { title, description, image, imageAlt }= Astro.props
 
 const permalink = Astro.request.canonicalURL.toString()
 const appendedBrandTitle = title?.includes('|') ? title : `${title} | Roman Munar`
@@ -14,7 +17,7 @@ const isProd = process.env.NODE_ENV !== 'development';
 ---
 <html lang="en">
 <head>
-    <BaseHead title={appendedBrandTitle} description={description} permalink={permalink} />
+    <BaseHead title={appendedBrandTitle} description={description} permalink={permalink} image={image} imageAlt={imageAlt} />
 </head>
 <body class="bg-brand-purple text-brand-light-blue font-body">
     <div class="relative container z-50">

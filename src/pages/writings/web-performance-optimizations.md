@@ -1,7 +1,7 @@
 ---
-title: Web essentials
+title: Web performance optimizations
 publishedAt:
-description: SEO, Performance, and Accessibility
+description: All about web performance, caching, and things to consider before using SPAs
 image: /images/dist/blog_web-performance-optimizations.webp
 tags:
   - "Web dev"

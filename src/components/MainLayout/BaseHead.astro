@@ -5,10 +5,11 @@ export interface Props {
 	title: string;
 	description: string;
 	permalink: string;
+	image ?: string;
+	imageAlt ?: string;
 }
 
-const { title, description, permalink } = Astro.props;
-const imageAlt = "Roman Munar's website logo ";
+const { title, description, permalink, image = "/images/dist/banner.webp", imageAlt = "Roman Munar's website logo" } = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -35,7 +36,7 @@ const imageAlt = "Roman Munar's website logo ";
 <meta property="og:url" content={permalink} />
 <meta property="og:title" content={title} />
 <meta name="description" property="og:description" content={description} />
-<meta property="og:image" content="/images/dist/banner.webp" />
+<meta property="og:image" content={image} />
 <meta property="og:image:alt" content={imageAlt} />
 
 <!-- Twitter -->
@@ -43,7 +44,7 @@ const imageAlt = "Roman Munar's website logo ";
 <meta property="twitter:site" content={'roman_munar'} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content="/images/dist/banner.webp" />
+<meta property="twitter:image" content={image} />
 <meta name="twitter:image:alt" content={imageAlt} />
 
 <!-- Global site tag (gtag.js) - Google Analytics -->

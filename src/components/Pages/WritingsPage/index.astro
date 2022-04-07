@@ -7,16 +7,17 @@ import { formatDate } from  "../../../utils"
 import readingTimeLib from "reading-time"
 
 export const addPubDateAndReadingTime = (p: FrontMatterMetadata) => ({
-    ...(p.publishedAt && { publishDate: formatDate(p.publishedAt) }), 
-    readingTime: readingTimeLib(p.astro.source).text,
-    draft: !!p.publishedAt,
+    ...(p.publishedAt && { 
+        publishDate: formatDate(p.publishedAt),
+        readingTime: readingTimeLib(p.astro.source).text,
+    }), 
+    draft: !p.publishedAt, 
     ...p
 })
 
 export let getAllPosts  = async () => {
   const posts: FrontMatterMetadata[] = await Astro.fetchContent("../../../pages/writings/*.md");
-  const newPosts: Blog[] = posts.map(addPubDateAndReadingTime).filter(p => p.draft)
-
+  const newPosts: Blog[] = posts.map(addPubDateAndReadingTime)
   return newPosts.sort((a, b) => new Date(b.publishedAt).valueOf() - new Date(a.publishedAt).valueOf())
 };
 

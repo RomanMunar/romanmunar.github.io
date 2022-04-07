@@ -2,11 +2,11 @@
 import MainLayout from "../MainLayout/MainLayout.astro";
 import PrimaryButton from "../Buttons/PrimaryButton.astro";
 
-// Seems like an ssr solution
+// An SSR solution
 // import { routes } from "../MainLayout/Nav.astro";
 // const showSoon = !!routes.find((r) => r.pathname === Astro.request.url.pathname)
 
-const {showSoon} = Astro.props as { showSoon?: boolean}
+const { showSoon } = Astro.props as { showSoon?: boolean }
 ---
 <MainLayout title='Page not found' description='This page does not exist'>
     <div class="pt-20 px-4 flex items-center justify-center bg-brand-purple">

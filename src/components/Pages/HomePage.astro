@@ -32,17 +32,19 @@ const now = [
         <section>
             <p class="font-display text-brand-dark-green font-bold">Latest content</p>
             <ul class="md:px-4 py-2 space-y-4">
-                {allPosts.map(({title, url, publishedAt, publishDate, readingTime})=> (
+                {allPosts.map(({title, url, publishedAt, publishDate, draft, readingTime})=> (
                     <li>
                         <a class="block p-1 border-b border-brand-light-blue" href={url}>
                             <article class="flex flex-col md:flex-row justify-between">
                                 <header>
                                     <h1>{title}</h1>
                                 </header>
-                                <div class="flex text-sm ml-auto md:m-0">
-                                    <time datetime={publishedAt}>{publishDate}</time> <span class="px-1">•</span>
-                                    <p>{readingTime}</p>
-                                </div>
+                                {!draft && (
+                                    <div class="flex text-sm ml-auto md:m-0">
+                                        <time datetime={publishedAt}>{publishDate}</time> <span class="px-1">•</span>
+                                        <p>{readingTime}</p>
+                                    </div>
+                                )}
                             </article>
                         </a>
                     </li>
