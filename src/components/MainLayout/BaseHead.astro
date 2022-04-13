@@ -7,9 +7,11 @@ export interface Props {
 	permalink: string;
 	image ?: string;
 	imageAlt ?: string;
+	keywords ?: string[];
 }
 
-const { title, description, permalink, image = "/images/dist/banner.webp", imageAlt = "Roman Munar's website logo" } = Astro.props;
+const { title, description, permalink, image = "/images/dist/banner.webp", imageAlt = "Roman Munar's website logo", keywords } = Astro.props;
+const canonicalImageSrc = new URL(image, Astro.site);
 ---
 
 <!-- Global Metadata -->
@@ -28,24 +30,29 @@ const { title, description, permalink, image = "/images/dist/banner.webp", image
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
-<meta name="title" content={title} />
 <link rel="canonical" href={permalink} />
+<meta name="robots" content="follow, index">
+{keywords && (
+	<meta name="keywords" content={keywords.join(',')} />
+)}
+
+<meta name="author" content="Roman Munar">
 
 <!-- Open Graph / Facebook -->
+<meta name="title" property="og:title" content={title} />
+<meta name="description" property="og:description" content={description} />
 <meta property="og:type" content="website" />
 <meta property="og:url" content={permalink} />
-<meta property="og:title" content={title} />
-<meta name="description" property="og:description" content={description} />
-<meta property="og:image" content={image} />
+<meta property="og:image" content={canonicalImageSrc} />
 <meta property="og:image:alt" content={imageAlt} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:site" content={'roman_munar'} />
+<meta property="twitter:site" content='roman_munar' />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={image} />
-<meta name="twitter:image:alt" content={imageAlt} />
+<meta property="twitter:image:src" content={canonicalImageSrc} />
+<meta property="twitter:image:alt" content={imageAlt} />
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QKJH1TSZ20"></script>

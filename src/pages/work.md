@@ -6,7 +6,7 @@ updatedAt: 2022-03-27
 layout: "../components/Pages/WorkContentLayout.astro"
 ---
 
-Hey I'm Roman Munar. I'm a self-taught software developer and has been working professionally for &gt;3 years. On the side, I help debug and critique projects on several developer social learning groups and also likes to dabble with UI design and UX to some extent for my side projects.
+Hey I'm Roman Munar. I'm a self-taught software developer and has been working professionally for >3 years. On the side, I help debug and critique projects on several developer social learning groups and also likes to dabble with UI design and UX to some extent for my side projects.
 
 ### Values and expectations working with me
 
@@ -26,6 +26,7 @@ Hey I'm Roman Munar. I'm a self-taught software developer and has been working p
 - Building Prioritizer.
 - Building Pinoy who codes.
 - Improving this site.
+- Writing...
 - Automating things with zx and puppeteer
 
 ### My Goto Tech Stack
@@ -63,7 +64,10 @@ These Tech are my staples. I use them on my projects daily. I tend to reach out 
     - Cypress E2E testing
     - MSW client-only network testing.
   - **Environemnt**
-    - VSCode, Linux/Bash, Docker, and zx.
+    - VSCode
+    - Linux/Bash
+    - Docker
+    - zx
   - **In development**
     - Redux toolkit, styled-components, Svelte
     - NestJS, Express, Fastify
