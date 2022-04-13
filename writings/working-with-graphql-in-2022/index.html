@@ -16,15 +16,18 @@
 
 <!-- Primary Meta Tags -->
 <title>Working with GraphQL in 2022 | Roman Munar</title>
-<meta name="title" content="Working with GraphQL in 2022 | Roman Munar">
 <link rel="canonical" href="https://romanmunar.github.io/writings/working-with-graphql-in-2022/">
+<meta name="robots" content="follow, index">
+<meta name="keywords" content="GraphQL,API Schema">
+
+<meta name="author" content="Roman Munar">
 
 <!-- Open Graph / Facebook -->
+<meta name="title" property="og:title" content="Working with GraphQL in 2022 | Roman Munar">
+<meta name="description" property="og:description" content="Things to consider before deciding to use GraphQL">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://romanmunar.github.io/writings/working-with-graphql-in-2022/">
-<meta property="og:title" content="Working with GraphQL in 2022 | Roman Munar">
-<meta name="description" property="og:description" content="Things to consider before deciding to use GraphQL">
-<meta property="og:image" content="/images/dist/blog_working-with-graphql-2022.webp">
+<meta property="og:image" content="https://romanmunar.github.io/images/dist/blog_working-with-graphql-2022.webp">
 <meta property="og:image:alt" content="Roman Munar's website logo">
 
 <!-- Twitter -->
@@ -32,8 +35,8 @@
 <meta property="twitter:site" content="roman_munar">
 <meta property="twitter:title" content="Working with GraphQL in 2022 | Roman Munar">
 <meta property="twitter:description" content="Things to consider before deciding to use GraphQL">
-<meta property="twitter:image" content="/images/dist/blog_working-with-graphql-2022.webp">
-<meta name="twitter:image:alt" content="Roman Munar's website logo">
+<meta property="twitter:image:src" content="https://romanmunar.github.io/images/dist/blog_working-with-graphql-2022.webp">
+<meta property="twitter:image:alt" content="Roman Munar's website logo">
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QKJH1TSZ20"></script>
@@ -46,7 +49,7 @@
 	gtag('config', 'G-QKJH1TSZ20');
 </script>
 
-<link rel="stylesheet" href="/assets/asset.9c21ec72.css"></link><script type="module" src="/entry.466e36343.js" astro-script="/writings/working-with-graphql-in-2022/script-0"></script>
+<link rel="stylesheet" href="/assets/asset.eb16e6db.css"></link><script type="module" src="/entry.466e36343.js" astro-script="/writings/working-with-graphql-in-2022/script-0"></script>
 </head>
 <body class="bg-brand-purple text-brand-light-blue font-body">
     <div class="relative container z-50">
@@ -134,12 +137,12 @@
             <article>
         <header class="bg-brand-dark-purple shadow px-4">
     <div class="container pt-10 md:pt-20 pb-12">
-        <nav aria-label="breadcrumbs" class="astro-7UOKE4JM">
-    <ul class="flex text-brand-light-blue astro-7UOKE4JM">
-        <li class="astro-7UOKE4JM">
-                <a class="text-brand-link-blue astro-7UOKE4JM" href="/">Home</a>
-            </li><li class="astro-7UOKE4JM">
-                <a class="text-brand-link-blue astro-7UOKE4JM" href="/writings">Writings</a>
+        <nav aria-label="breadcrumbs" class="astro-VLYWV337">
+    <ul class="flex astro-VLYWV337">
+        <li class="astro-VLYWV337">
+                <a class="text-brand-link-blue astro-VLYWV337" href="/">Home</a>
+            </li><li class="astro-VLYWV337">
+                <a class="text-brand-link-blue astro-VLYWV337" href="/writings">Writings</a>
             </li>
     </ul>
 </nav>
@@ -150,23 +153,79 @@
         </h1>
         
         <div class="grid grid-cols-1 pt-5">
-            
-            
+            <p>
+                    <svg viewBox="0 0 20 20" class="opacity-70 inline h-5 w-5" astro-icon="heroicons-solid:clock"><path fill="currentColor" fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-12a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l2.828 2.829a1 1 0 1 0 1.415-1.415L11 9.586V6z" clip-rule="evenodd"/></svg>
+
+                        Last updated on <time datetime="2022-04-12T00:00:00.000Z">April 12, 2022</time>
+                </p>
+            <p>
+                    <svg viewBox="0 0 20 20" class="opacity-70 inline h-5 w-5" astro-icon="heroicons-solid:bookmark"><path fill="currentColor" d="M5 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v14l-5-2.5L5 18V4z"/></svg>
+
+                    8 min read
+                </p>
             <p class="pt-4">
-                    Personal, Dev
+                    GraphQL, API Schema
                 </p>
         </div>
     </div>
 </header>
         <div class="max-w-[65ch] lg:max-w-container mx-auto pt-20 px-4 gap-4 flex flex-col lg:flex-row-reverse justify-center pb-12">
             <aside>
-                <div class="sticky top-20 overflow-y-auto text-white">
-                    <nav id="toc" style="--toc-header-offset: 1.25em" aria-label="Table of contents" class="astro-SIXZ3FCB">
+                    <div class="sticky top-20 overflow-y-auto text-white">
+                        <nav id="toc" style="--toc-header-offset: 1.25em" aria-label="Table of contents" class="astro-SIXZ3FCB">
     <p style="padding-left: calc(2 * var(--toc-header-offset))" class="py-0.5 text-lg font-bold border-l-2 border-transparent astro-SIXZ3FCB">On this page</p>
     <ul class="astro-SIXZ3FCB">
         <li class="astro-SIXZ3FCB">
                 <a href="#introduction" data-heading-id="introduction" style="padding-left: calc(2 * var(--toc-header-offset))" class="block py-0.5 text-brand-light-blue border-l-2 border-l-brand-dark-green-analogous depth-2 astro-SIXZ3FCB">
                     Introduction
+                </a>
+            </li><li class="astro-SIXZ3FCB">
+                <a href="#rest" data-heading-id="rest" style="padding-left: calc(3 * var(--toc-header-offset))" class="block py-0.5 text-brand-light-blue border-l-2 border-l-brand-dark-green-analogous depth-3 astro-SIXZ3FCB">
+                    REST
+                </a>
+            </li><li class="astro-SIXZ3FCB">
+                <a href="#what-changed" data-heading-id="what-changed" style="padding-left: calc(3 * var(--toc-header-offset))" class="block py-0.5 text-brand-light-blue border-l-2 border-l-brand-dark-green-analogous depth-3 astro-SIXZ3FCB">
+                    What changed
+                </a>
+            </li><li class="astro-SIXZ3FCB">
+                <a href="#graphql" data-heading-id="graphql" style="padding-left: calc(3 * var(--toc-header-offset))" class="block py-0.5 text-brand-light-blue border-l-2 border-l-brand-dark-green-analogous depth-3 astro-SIXZ3FCB">
+                    GraphQL
+                </a>
+            </li><li class="astro-SIXZ3FCB">
+                <a href="#should-you-use-graphql" data-heading-id="should-you-use-graphql" style="padding-left: calc(3 * var(--toc-header-offset))" class="block py-0.5 text-brand-light-blue border-l-2 border-l-brand-dark-green-analogous depth-3 astro-SIXZ3FCB">
+                    Should you use GraphQL?
+                </a>
+            </li><li class="astro-SIXZ3FCB">
+                <a href="#solutions" data-heading-id="solutions" style="padding-left: calc(3 * var(--toc-header-offset))" class="block py-0.5 text-brand-light-blue border-l-2 border-l-brand-dark-green-analogous depth-3 astro-SIXZ3FCB">
+                    Solutions
+                </a>
+            </li><li class="astro-SIXZ3FCB">
+                <a href="#designing-a-schema" data-heading-id="designing-a-schema" style="padding-left: calc(3 * var(--toc-header-offset))" class="block py-0.5 text-brand-light-blue border-l-2 border-l-brand-dark-green-analogous depth-3 astro-SIXZ3FCB">
+                    Designing a Schema
+                </a>
+            </li><li class="astro-SIXZ3FCB">
+                <a href="#schema-first-vs-code-first" data-heading-id="schema-first-vs-code-first" style="padding-left: calc(4 * var(--toc-header-offset))" class="block py-0.5 text-brand-light-blue border-l-2 border-l-brand-dark-green-analogous depth-4 astro-SIXZ3FCB">
+                    Schema-first vs Code-first
+                </a>
+            </li><li class="astro-SIXZ3FCB">
+                <a href="#things-that-can-be-done-client-side" data-heading-id="things-that-can-be-done-client-side" style="padding-left: calc(4 * var(--toc-header-offset))" class="block py-0.5 text-brand-light-blue border-l-2 border-l-brand-dark-green-analogous depth-4 astro-SIXZ3FCB">
+                    Things that can be done client-side
+                </a>
+            </li><li class="astro-SIXZ3FCB">
+                <a href="#code-first-schema-builders" data-heading-id="code-first-schema-builders" style="padding-left: calc(4 * var(--toc-header-offset))" class="block py-0.5 text-brand-light-blue border-l-2 border-l-brand-dark-green-analogous depth-4 astro-SIXZ3FCB">
+                    Code-first schema builders
+                </a>
+            </li><li class="astro-SIXZ3FCB">
+                <a href="#errors" data-heading-id="errors" style="padding-left: calc(4 * var(--toc-header-offset))" class="block py-0.5 text-brand-light-blue border-l-2 border-l-brand-dark-green-analogous depth-4 astro-SIXZ3FCB">
+                    Errors
+                </a>
+            </li><li class="astro-SIXZ3FCB">
+                <a href="#graphql-generators" data-heading-id="graphql-generators" style="padding-left: calc(3 * var(--toc-header-offset))" class="block py-0.5 text-brand-light-blue border-l-2 border-l-brand-dark-green-analogous depth-3 astro-SIXZ3FCB">
+                    GraphQL generators
+                </a>
+            </li><li class="astro-SIXZ3FCB">
+                <a href="#development-tools" data-heading-id="development-tools" style="padding-left: calc(3 * var(--toc-header-offset))" class="block py-0.5 text-brand-light-blue border-l-2 border-l-brand-dark-green-analogous depth-3 astro-SIXZ3FCB">
+                    Development Tools
                 </a>
             </li>
     </ul>
@@ -176,19 +235,143 @@
 
 
 
-                    <a target="_blank" rel="noopener noreferrer" class="text-brand-link-blue" href="https://github.com/romanmunar/romanmunar.github.io/blob/main/src/pages/writings/working-with-graphql-in-2022.md">
+                        <a target="_blank" rel="noopener noreferrer" class="text-brand-link-blue" href="https://github.com/romanmunar/romanmunar.github.io/blob/main/src/pages/writings/working-with-graphql-in-2022.md">
     <span class="flex pl-12 pt-4 gap-4 text-sm whitespace-nowrap">
-                            <svg viewBox="0 0 24 24" class="text-brand-light-blue w-5 h-5" astro-icon="mdi:github"><path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+                                <svg viewBox="0 0 24 24" class="text-brand-light-blue w-5 h-5" astro-icon="mdi:github"><path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
 
-                            Edit on github
-                        </span>
+                                Edit on github
+                            </span>
 </a>
-                </div>
-            </aside>
+                    </div>
+                </aside>
             <section class="w-full relative z-0">
                 <h2 class="opacity-0 absolute top-0 left-0" id="introduction">Introduction</h2>
                 <div class="first-letter:text-brand-dark-green first-letter:text-5xl prose-invert prose prose-h4:font-bold prose-headings:font-display sm:prose-sm lg:prose-lg">
-                    <p class="lead">Currently writing this page 😅.</p><p>But since you're here. Send me an email and I will send you the draft of this page. I'd appreciate the help If you can help me revise and look for grammar errors/improvements.</p>
+                    <p>This is not an introductory resource for GraphQL. If you are new to GraphQL then I recommend you read through the official introduction to GraphQL <a href="https://graphql.org/learn/">here</a> before continuing through the article.</p><p>Let's take a look at REST and figure out how we got here.</p><h3 id="rest"><a class="anchor" href="#rest"><span class="icon icon-link"></span></a>REST</h3><p>REST provides a simple and lightweight convention for creating APIs. Providing you with 5 components:</p><ul>
+<li>An endpoint (ex. /notes)</li>
+<li>A CRUD method (ex. POST)</li>
+<li>An optional body (ex. <code>{ "title": "protect bojji" }</code>)</li>
+<li>Headers for authentication and identifying content types (ex. X-auth-token: Bearer eyjA2th...)</li>
+<li>Status codes
+<ul>
+<li>200 for a success, 300 is still a success but it means that the endpoint was moved or aliased.</li>
+<li>400 for errors made by the client</li>
+<li>500 for internal server errors</li>
+</ul>
+</li>
+</ul><p>Combining the examples above on each components It's easy to know what the request will do. At the endpoint of <code>notes</code> make a <code>POST</code>(create) request with the body of <code>{ "title": "protect bojji" }</code>. We respond with a status code of <code>200</code> if it's succesful and <code>400</code> If say the title <code>protect bojji</code> has already been taken and an optional body of <code>{ error: "Title has already been taken" }</code> to tell the client why the request failed.</p><p class="lead">A simple `Request, and Response` model.</p><p>This convention allowed developers to build intuitive, high-security, and performant APIs abstracting away an endpoint's implementation from its clients. This created a <code>clear boundary</code> between clients and servers. But as we'll learn later on this simplicity has its own issues.</p><h3 id="what-changed"><a class="anchor" href="#what-changed"><span class="icon icon-link"></span></a>What changed</h3><p><strong>Data requirements</strong> became more strict and well-defined.</p><p><strong>Performance</strong> is becoming more and more crucial as more users are using their mobile phones as their primary device a market share of 65.34% and a demand for performant applications. A short article from a Google study titled <a href="https://ai.googleblog.com/2009/06/speed-matters.html">Speed Matters</a>. I also have an article about <a href="/writings/web-performance-optimizations">web performance</a> that covered the topic of performance in more depth.</p><ul>
+<li>Large response payloads</li>
+<li>Network request chaining where requests only happens one after the other.</li>
+<li>Differing data needs for each clients
+A client might want a button to display a profile, its accounts, and its history of transactinos. This will warrant 3 roundtrips to your server. But it can be solved by responding all of those data within a single endpoint
+<ul>
+<li>How are going to name the endpoint?</li>
+<li>Documentation, Testing, Caching, Security etc.</li>
+<li>Not only that but say another client needs to display more things than the previous client. This would warrant another endpoint, name, documentation, testing, etc.</li>
+</ul>
+</li>
+</ul><p><strong>Documenting and versioning</strong> an api is still hard to implement and tedious to maintain.</p><p>A growing need for a <em>single source of truth</em> for data where clients, servers, third-party APIs and external datasources can reliably communicate to each other.</p><p><em>Arbitrary rules</em> and specifications are not enough. Even a seemingly safe change can break things in production even in a well-tested codebase. Changes that could've probably prevented by a compiler that ensures data requirements before reaching production.</p><h3 id="graphql"><a class="anchor" href="#graphql"><span class="icon icon-link"></span></a>GraphQL</h3><p>The biggest difference GraphQL has over REST is that it allows clients to know ahead what data it can get, let the client pick what it needs, and respond with those data. It acts as a querying language for APIs.</p><ul>
+<li>
+<p>Strictly defines the schema of your data which acts as the single source of truth for your applications.</p>
+</li>
+<li>
+<p>A proxy for servers, clients, third party APIs, and external datasources.</p>
+</li>
+<li>
+<p>N+1 queries, pagination, lack of packages on languages other than <code>NodeJS</code> and <code>Go</code>.</p>
+<ul>
+<li>This issues deserves an article on their own but to keep the brevity we'll just keep it here.</li>
+<li>I would like to mention <code>Prisma</code> somewhere in this article but it seems to fit in here the best. Prisma is an ORM unlike any other out there. It has its own migration tool, auto type-generation, an intuitive SDL to define tables,</li>
+</ul>
+</li>
+</ul><h3 id="should-you-use-graphql"><a class="anchor" href="#should-you-use-graphql"><span class="icon icon-link"></span></a>Should you use GraphQL?</h3><ul>
+<li>Steep learning curve.
+This is an often underestimated disadvantage of using GraphQL which is why I don't see GraphQL as an off-the-shelf solution and only recommend it for projects where data requirements are strict eg. Accounting software, Ecommerce, and B2b apps.</li>
+<li>Requires a collaborative culture within the team. Common issues I watch out to avoid dead-communication.
+<ol>
+<li>Timezone</li>
+<li>work hour difference</li>
+<li>language barrier.</li>
+</ol>
+</li>
+</ul><p>Most developers associate themselves as being a frontend or a backend. In practice, GraphQL makes this separation blurry. A Frontend-centered API thins out the backend's responsibility. Mostly by splitting the work on the API by 50/50. It is advised for Frontends to be able to work on the language of choice in the Backend as this will save a lot of time for iterating in development.</p><h3 id="solutions"><a class="anchor" href="#solutions"><span class="icon icon-link"></span></a>Solutions</h3><ul>
+<li>Realtime
+<ul>
+<li>Subscriptions</li>
+<li>Live queries (really good and easy to implement)</li>
+</ul>
+</li>
+<li>Caching
+<ul>
+<li>Hard regardless of api specification.</li>
+<li>But tools offers it out of the box.</li>
+<li>Normalized caching on the frontend can be a pain to deal with.</li>
+</ul>
+</li>
+<li>Security
+<ul>
+<li>Query complexity</li>
+<li>Rate limiting</li>
+</ul>
+</li>
+<li>Documentation
+<ul>
+<li>Easier than rest but tricky to do as it's usually obvious what the operation does based on its name or is it? An common approach is to write it for someone new in the team.</li>
+<li>Critical for all codebases so be mindful as this can easily be neglected.</li>
+</ul>
+</li>
+<li>Testing
+<ul>
+<li>Easier if the schema is well-designed.</li>
+</ul>
+</li>
+<li>Error handling
+<ul>
+<li>GraphQL allows you to have granular level of control on how you implement your handling of errors. GraphQL does not use status codes for handling errors, <em>controversial</em> because it's a convention used for decades.</li>
+<li>Can be hard to design and complexity can grow rapidly. I've linked an excellent article below covering how to design-about this.</li>
+</ul>
+</li>
+</ul><h3 id="designing-a-schema"><a class="anchor" href="#designing-a-schema"><span class="icon icon-link"></span></a>Designing a Schema</h3><h4 id="schema-first-vs-code-first"><a class="anchor" href="#schema-first-vs-code-first"><span class="icon icon-link"></span></a>Schema-first vs Code-first</h4><p>As mentioned above that when working with designing a GraphQL schema a collaboration within the team is required. In that case, Schema-first approach should always be the goto — well not quite. While it's possible to build a schema using a schema-first approach only. Sooner as your schema grows you'll find that it becomes increasingly hard to navigate and update something without causing an issue. I find the schema-first approach to be useful as a mocking tool for a quick proof-of-concept, and prototypes then use code-first to better organize resolvers and types making it easier to navigate and edit. I'd advise using a statically-typed language because errors help cut down time spent in debugging and allows developers to refactor confidently with a reasonable amount of time. Ofcourse some requirements doesn't look what they are on the surface and sometimes requires coding a requirement before seeing the problem. This is unavoidable but communication is the key here.</p><h4 id="things-that-can-be-done-client-side"><a class="anchor" href="#things-that-can-be-done-client-side"><span class="icon icon-link"></span></a>Things that can be done client-side</h4><p>I know how tempting it is to do the</p><ul>
+<li>Validations</li>
+<li>Data formatting</li>
+<li>In that case. GraphQL would no longer be the single source of truth. Imagine needing to have a mobile client. It will have no idea about the validation that the web client has.</li>
+</ul><h4 id="code-first-schema-builders"><a class="anchor" href="#code-first-schema-builders"><span class="icon icon-link"></span></a>Code-first schema builders</h4><p>I reach out for these schema builders when starting a project with NodeJS. All of them are type-safe with great Typescript support. You can't go wrong with any of these but I've made a small section about because they're a big part in working with GraphQL and has their own nice and not-so-great things.</p><ul>
+<li>Nexus
+<ul>
+<li>Has an integration with <code>Prisma</code>.</li>
+<li>Favored more by the community.</li>
+</ul>
+</li>
+<li>PothosQL
+<ul>
+<li>Has an integration with <code>Prisma</code>.</li>
+<li>Has useful plugins. e.g Auth, Validation, Errors, and Directive plugins.</li>
+<li>More maintained than nexus.</li>
+</ul>
+</li>
+<li>Type-graphql
+<ul>
+<li>Uses a <code>Class</code> for defining data types in the schema.</li>
+<li>Integrates well with <code>TypeORM</code> by allowing you to annotate data types for both the GraphQL Schema and Database Schema within a single class.</li>
+</ul>
+</li>
+</ul><h4 id="errors"><a class="anchor" href="#errors"><span class="icon icon-link"></span></a>Errors</h4><p>A great thing with GraphQL is that you can model everything including <code>errors</code>. An article by <em>Marc-Andre Giroux</em> titled <a href="https://productionreadygraphql.com/2020-08-01-guide-to-graphql-errors/">A Guide to GraphQL Errors</a> establishes ways to think and reason about errors in GraphQL compared to REST and also covered ways on how to customize/structure errors with their distinct advantages and disadvantages. I always read this article whenever I'm working on errors with GraphQL.</p><h3 id="graphql-generators"><a class="anchor" href="#graphql-generators"><span class="icon icon-link"></span></a>GraphQL generators</h3><p>I personally don't reach for these solutions. I much prefer to write resolvers myself for better control and to create a separation from the GraphQL schema and database schema. If you're chasing to save time in writing everything from scratch these are the tools that are out there. You'll also get some performance benefits from using them as they are written in performant languages and are optimized by default.</p><ul>
+<li><a href="https://www.graphile.org/postgraphile/">Postgraphile</a>
+<ul>
+<li>Steep learning curve.</li>
+<li>To have better control of the output it's favored to write everything with raw sql.</li>
+</ul>
+</li>
+<li>Hasura (Haskell — but can integrate with an external server through actions)</li>
+<li>Graph-jin (Golang)</li>
+<li>App sync (AWS)</li>
+<li>WunderGraph. I just watched a youtube video from <code>Jack Herrington</code> I can tell that this tool can get a huge backing from the community because of its unique</li>
+</ul><h3 id="development-tools"><a class="anchor" href="#development-tools"><span class="icon icon-link"></span></a>Development Tools</h3><ul>
+<li><a href="https://chrome.google.com/webstore/detail/apollo-client-devtools/jdkknkkbebbapilgoeccciglkfbmbnfm">Apollo</a> or <a href="https://chrome.google.com/webstore/detail/urql-devtools/mcfphkbpmkbeofnkjehahlmidmceblmm">Urql</a> chrome extension for inspecting responses and cache.</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=GraphQL.vscode-graphql">Graphql VScode extension</a></li>
+<li><a href="https://altair.sirmuel.design/">Altair</a></li>
+<li>GraphQL Codegen, Envelop, and lots more from <a href="https://www.the-guild.dev">The Guild.dev</a></li>
+</ul>
                 </div>
             </section>
         </div>
