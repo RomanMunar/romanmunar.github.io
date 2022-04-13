@@ -1,4 +1,5 @@
 env:
+  githubUsername: romanmunar
   githubEmail: roman.munar1@gmail.com
   deployToRepo: romanmunar.github.io
 
@@ -38,8 +39,8 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-directory: "dist"
-          destination-github-username: ${{ github.actor }}
+          source-directory: "dist/"
+          destination-github-username: ${{ env.githubUsername }}
           destination-repository-name: ${{ env.deployToRepo }}
           user-email: ${{ env.githubEmail }}
           commit-message: Deploy ORIGIN_COMMIT

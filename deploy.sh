@@ -20,6 +20,6 @@ git add -A
 git commit -m 'deploy'
 
 # if you are deploying to https://romanmunar.github.io
-git push -f git@github.com:romanmunar/romanmunar.github.io.git main
+git push -f git@github.com:RomanMunar/romanmunar.github.io.git main
 
 cd -
