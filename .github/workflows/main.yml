@@ -1,5 +1,5 @@
 env:
-  githubEmail: romanmunar.gmail.com
+  githubEmail: roman.munar1@gmail.com
   deployToRepo: romanmunar.github.io
 
 name: Github Pages Astro CI
