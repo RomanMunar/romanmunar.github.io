@@ -62,9 +62,9 @@ These Tech are my staples. I use them on my projects daily. I tend to reach out 
   - **Testing**
     - Jest integration testing
     - Cypress E2E testing
-    - MSW client-only network testing.
+    - MSW client network testing.
   - **Environemnt**
-    - VSCode
+    - VS Code
     - Linux/Bash
     - Docker
     - zx

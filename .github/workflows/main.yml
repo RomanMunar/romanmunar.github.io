@@ -20,8 +20,8 @@ jobs:
 
     steps:
       # https://github.com/actions/checkout/issues/760
-      - name: Trust My Directory
-        run: export GIT_CEILING_DIRECTORIES=/__w
+      - name: Work around permission issue
+        run: git config --global --add safe.directory /tmp
 
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
