@@ -1,5 +1,4 @@
 env:
-  githubUsername: romanmunar
   githubEmail: roman.munar1@gmail.com
   deployToRepo: romanmunar.github.io
 
@@ -33,6 +32,10 @@ jobs:
           npm run build
           touch ./dist/.nojekyll
 
+      # https://github.com/actions/checkout/issues/760
+      - name: work around permission issue
+        run: git config --global --add safe.directory /__w/${{ github.actor }}/${{ env.deployToRepo }}
+
       # Push to your pages repo
       - name: Push to pages repo
         uses: cpina/github-action-push-to-another-repository@main
@@ -40,7 +43,7 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
           source-directory: "dist/"
-          destination-github-username: ${{ env.githubUsername }}
+          destination-github-username: ${{ github.actor }}
           destination-repository-name: ${{ env.deployToRepo }}
           user-email: ${{ env.githubEmail }}
           commit-message: Deploy ORIGIN_COMMIT
