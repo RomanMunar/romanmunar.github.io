@@ -19,6 +19,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # https://github.com/actions/checkout/issues/760
+      - name: Trust My Directory
+        run: export GIT_CEILING_DIRECTORIES=/__w
+
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
@@ -31,10 +35,6 @@ jobs:
         run: |
           npm run build
           touch ./dist/.nojekyll
-
-      # https://github.com/actions/checkout/issues/760
-      - name: work around permission issue
-        run: git config --global --add safe.directory /__w/${{ github.actor }}/${{ env.deployToRepo }}
 
       # Push to your pages repo
       - name: Push to pages repo
