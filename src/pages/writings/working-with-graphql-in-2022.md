@@ -104,11 +104,13 @@ As mentioned above that when working with designing a GraphQL schema a collabora
 
 #### Things that can be done client-side
 
-I know how tempting it is to do the
+I know how tempting it is to do the validations and data formatting in the client-side to avoid requesting to the backend for something that can be done in the client-side. There are 3 problem with this:
 
-- Validations
-- Data formatting
-- In that case. GraphQL would no longer be the single source of truth. Imagine needing to have a mobile client. It will have no idea about the validation that the web client has.
+- Other clients will not know about those validations.
+- Changing data requirements would mean that you'd have to refactor them multiple places.
+- There's no longer a source of truth.
+
+A common practice I see for this issue is to place the validations and data formatting only in the server and only do common validations in the client-side such as the data type (number/text), required, etc.
 
 #### Code-first schema builders
 
