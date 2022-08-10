@@ -2,61 +2,100 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import BlogPostPreview from "../components/BlogPostPreview.astro";
+import { Icon } from 'astro-icon'
+import Footer from "../components/Footer.astro";
 
 let title = "Example Blog";
 let description = "The perfect starter for your perfect blog.";
 
 // Use Astro.glob to fetch all post with associated frontmatter
-const unsortedPosts = await Astro.glob("./posts/*.md");
+const unsortedPosts = await Astro.glob("./posts/*.mdx");
 const posts = unsortedPosts.sort(function (a, b) {
 	return (
 		new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf()
 	);
 });
+
+export const socialLinks = [
+	{
+		iconName: "mdi:github",
+		company: "Github",
+		link: "https://github.com/RomanMunar/",
+		label: "My github profile",
+	},
+	{
+		iconName: "mdi:linkedin",
+		company: "LinkedIn",
+		link: "https://www.linkedin.com/in/romanmunar/",
+		label: "",
+	},
+	{
+		iconName: "mdi:email",
+		company: "Email",
+		link: "mailto:roman.munar1@gmail.com",
+		label: "My email addresss",
+	},
+	{
+		iconName: "mdi:twitter",
+		company: "Twitter",
+		link: "https://twitter.com/roman_munar/",
+		label: "My twitter profile",
+	},
+];
+
+export const routes = [
+	{ title: "Articles", url: '/articles' },
+	{ title: "Youtube", url: '/youtube' },
+	{ title: "Projects", url: '/projects' },
+	{ title: "Nuggets", url: '/nuggets' },
+	{ title: "Uses", url: '/uses' },
+]
+
 ---
 
 <html lang="en">
-	<head>
-		<BaseHead title={title} description={description} />
-	</head>
 
-	<body>
-		<Header />
-		<div class="wrapper">
-			<main class="content">
-				<section class="intro">
-					<h1>{title}</h1>
-					<p>{description}</p>
-				</section>
-				<section aria-label="Blog post list">
-					{posts.map(({ url, frontmatter }) => (
-						<BlogPostPreview
-							title={frontmatter.title}
-							description={frontmatter.description}
-							publishDate={frontmatter.publishDate}
-							url={url}
-						/>
-					))}
-				</section>
-			</main>
-		</div>
-	</body>
+<head>
+	<BaseHead title={title} description={description} />
+</head>
+
+<body class="bg-stone-50 min-h-screen">
+	<Header />
+	<div class="min-h-screen flex flex-col">
+		<main>
+			<section class="container lg:max-w-5xl mx-auto mt-16">
+				<h2 class="text-5xl font-medium text-gray-700 mb-8">Who am I?</h2>
+				<p class="text-3xl font-medium mb-6">
+					I'm Roman Munar, a frontend web developer from the <a
+						href="https://en.wikipedia.org/wiki/Philippines">Philippines</a>
+					<Icon role="img" name="philippines" />.
+				</p>
+				<p class="text-3xl font-medium mb-6">
+					I share everything I know about frontend development through my
+					<a href="/articles">articles</a>,
+					<a href="/youtube">youtube</a>, and <a href="/nuggets">notes</a>.
+				</p>
+				<p class="text-3xl font-medium mb-6">
+					I help developers at various
+					<a href="/nuggets/social-learning-groups">social learning groups</a>
+					to fix, debug, and write
+					better software. Delving on topics like CSS, Typescript, testing, accessibility, and more.
+				</p>
+				<p class="text-3xl font-medium mb-6">
+					Right now I'm working on TeamLive, and share interesting
+					technologies I ran into here on my website, and youtube.
+				</p>
+			</section>
+		</main>
+		<Footer />
+	</div>
+	<div class="min-h-screen bg-black"></div>
+</body>
+
 </html>
 
 <style>
-	.content {
-		margin-top: 4rem;
-		margin-bottom: 8rem;
-	}
-
-	.intro {
-		padding-bottom: 4rem;
-		margin-bottom: 2rem;
-		border-bottom: 4px solid var(--theme-divider);
-	}
-
-	h1 {
-		font-size: 2.5rem;
-		font-weight: 700;
+	a {
+		text-decoration: underline
 	}
 </style>

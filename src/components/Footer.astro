@@ -1,0 +1,15 @@
+---
+import { routes } from "../pages/index.astro";
+
+---
+
+<footer class="bg-stone-200">
+    <div class="container lg:max-w-5xl mx-auto">
+        <nav aria-label="sitemap">
+            <p class="font-bold py-2 text-brand-light-blue">Sitemap</p>
+            <ul class="text-brand-link-blue space-y-4">
+                {routes.map((link) => <li><a href={link.url}>{link.title}</a></li>)}
+            </ul>
+        </nav>
+    </div>
+</footer>

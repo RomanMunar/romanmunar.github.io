@@ -20,31 +20,27 @@ const {
 ---
 
 <html>
-	<head>
-		<BaseHead title={title} description={description} />
-	</head>
 
-	<body>
-		<Header />
-		<article class="wrapper content">
-			<header>
-				{heroImage && (
-					<img
-						width="720"
-						height="420"
-						loading="lazy"
-						src={heroImage.src}
-						alt={heroImage.alt}
-					/>
-				)}
-				<h1 class="title">{title}</h1>
-				<time>{publishDate}</time>
-			</header>
-			<main>
-				<slot></slot>
-			</main>
-		</article>
-	</body>
+<head>
+	<BaseHead title={title} description={description} />
+</head>
+
+<body>
+	<Header />
+	<article class="wrapper content">
+		<header>
+			{heroImage && (
+			<img width="720" height="420" loading="lazy" src={heroImage.src} alt={heroImage.alt} />
+			)}
+			<h1 class="title">{title}</h1>
+			<time>{publishDate}</time>
+		</header>
+		<main>
+			<slot></slot>
+		</main>
+	</article>
+</body>
+
 </html>
 
 <style>
